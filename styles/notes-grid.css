@@ -26,7 +26,7 @@
     }
 }
 
-.note {
+.note-wrapper {
     width: 100%;
 
     display: inline-block;
@@ -36,6 +36,28 @@
 
     padding: 1rem;
     margin-block: .5rem;
+
+    position: relative;
+}
+
+.note-wrapper .overlay {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+
+    transition: opacity 100ms ease-in-out;
+}
+
+.note-wrapper .overlay:hover {
+    opacity: 1;
+}
+
+.note-wrapper .overlay i {
+    position: absolute;
+
+    right: .5rem;
+    bottom: .5rem;
 }
 
 .note h2 {
