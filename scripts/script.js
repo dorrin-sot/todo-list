@@ -1,19 +1,19 @@
 let notes = [
-  {id: 0,title: 'hello', 'content': 'no\n\nno'},
-  {id: 1,title: 'hello', 'content': 'no'},
-  {id: 2,title: 'hello', 'content': 'no'},
-  {id: 3,title: 'hello', 'content': 'no'},
-  {id: 4,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  {id: 5,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  {id: 6,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  {id: 7,title: 'hello', 'content': 'no'},
-  {id: 8,title: 'hello', 'content': 'no'},
-  {id: 9,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  {id: 10,title: 'hello', 'content': 'no'},
-  {id: 11,title: 'hello', 'content': 'no'},
-  {id: 12,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  {id: 13,title: 'hello', 'content': 'no'},
-  {id: 14,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 0,title: 'hello', 'content': 'no\n\nno'},
+  // {id: 1,title: 'hello', 'content': 'no'},
+  // {id: 2,title: 'hello', 'content': 'no'},
+  // {id: 3,title: 'hello', 'content': 'no'},
+  // {id: 4,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 5,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 6,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 7,title: 'hello', 'content': 'no'},
+  // {id: 8,title: 'hello', 'content': 'no'},
+  // {id: 9,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 10,title: 'hello', 'content': 'no'},
+  // {id: 11,title: 'hello', 'content': 'no'},
+  // {id: 12,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 13,title: 'hello', 'content': 'no'},
+  // {id: 14,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
 ]
 
 const addFieldWrapper = document.querySelector('.add-field-wrapper')
@@ -31,6 +31,7 @@ function saveListAndClearListUI() {
   const noteContent = notCollapsed.querySelector('#note > textarea');
 
   if (!!title.value || !!noteContent.value) {
+    notesGrid.classList.remove('empty')
     notes.push({
       title: title.value,
       content: noteContent.value,
@@ -58,6 +59,13 @@ function updateNotesGrid() {
           <i class="icon-button far fa-trash-can" onclick="deleteNote(${note.id})"></i>
         </div>
       </div>`
+  }
+
+  if (notesGrid.innerHTML === '') {
+    notesGrid.classList.add('empty')
+    notesGrid.innerHTML = `
+        <img width="120" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjZmZmZmZmIj4KICA8cGF0aCBkPSJNOSAyMWMwIC41NS40NSAxIDEgMWg0Yy41NSAwIDEtLjQ1IDEtMXYtMUg5djF6bTMtMTlDOC4xNCAyIDUgNS4xNCA1IDljMCAyLjM4IDEuMTkgNC40NyAzIDUuNzRWMTdjMCAuNTUuNDUgMSAxIDFoNmMuNTUgMCAxLS40NSAxLTF2LTIuMjZjMS44MS0xLjI3IDMtMy4zNiAzLTUuNzQgMC0zLjg2LTMuMTQtNy03LTd6bTIuODUgMTEuMWwtLjg1LjZWMTZoLTR2LTIuM2wtLjg1LS42QTQuOTk3IDQuOTk3IDAgMCAxIDcgOWMwLTIuNzYgMi4yNC01IDUtNXM1IDIuMjQgNSA1YzAgMS42My0uOCAzLjE2LTIuMTUgNC4xeiIvPgo8L3N2Zz4K"/>
+        <p>Notes you add appear here</p>`
   }
 }
 
