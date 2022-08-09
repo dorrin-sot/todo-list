@@ -26,30 +26,32 @@
 }
 
 @media only screen and (min-width: 600px) {
-    .notes-grid {
+    .notes-grid:not(.empty) {
         column-count: 2
     }
 }
 
 @media only screen and (min-width: 1000px) {
-    .notes-grid {
+    .notes-grid:not(.empty) {
         column-count: 3
     }
 }
 
 @media only screen and (min-width: 1200px) {
-    .notes-grid {
+    .notes-grid:not(.empty) {
         column-count: 4
     }
 }
 
 .note-wrapper {
+    --border-radius: 1rem;
+
     width: 100%;
 
     display: inline-block;
 
     border: 1px solid var(--background-color-border);
-    border-radius: 1rem;
+    border-radius: var(--border-radius);
 
     padding: 1rem;
     margin-block: .5rem;
@@ -64,14 +66,19 @@
     opacity: 0;
 
     transition: opacity 100ms ease-in-out;
+
+    border-radius: var(--border-radius);
 }
 
-.note-wrapper .overlay:hover {
+.note-wrapper .overlay:hover,
+.note-wrapper .overlay:focus-within {
     opacity: 1;
 }
 
 .note-wrapper .overlay i {
     position: absolute;
+
+    font-size: 2rem;
 
     right: .5rem;
     bottom: .5rem;

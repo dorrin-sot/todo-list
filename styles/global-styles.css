@@ -96,3 +96,8 @@ button:active {
 button.primary {
     border: 1px solid var(--background-color-border);
 }
+
+*:focus-visible {
+    outline: none;
+    box-shadow: 0 0 5px 5px var(--background-color-border);
+}

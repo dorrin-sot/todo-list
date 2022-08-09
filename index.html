@@ -20,30 +20,30 @@
 
 <div class="add-field-wrapper">
     <div class="collapsed">
-        <div id="expander" onclick="switchAddFieldCollapse()">Take a note...</div>
-        <i id="new-list" class="icon-button far fa-square-check"></i>
-        <i id="new-list-with-image" class=" icon-button far fa-image"></i>
+        <div id="expander" onclick="switchAddFieldCollapse()" tabindex="1">Take a note...</div>
+        <i id="new-list" class="icon-button far fa-square-check" tabindex="2"></i>
+        <i id="new-list-with-image" class=" icon-button far fa-image" tabindex="2"></i>
     </div>
     <div class="hidden">
         <label for="title">Title</label>
-        <input id="title" placeholder="Title">
+        <input id="title" placeholder="Title" tabindex="1">
 
         <div id="note">
             <label for="new-item-text">Note content</label>
-            <textarea id="new-item-text" type="text" placeholder="Take a note..." rows="5"></textarea>
+            <textarea id="new-item-text" type="text" placeholder="Take a note..." rows="5" tabindex="2"></textarea>
         </div>
 
         <div class="icon-bar">
-            <i class="icon-button far fa-palette"></i>
-            <i class="icon-button far fa-image"></i>
-            <i class="icon-button far fa-tag"></i>
-            <i class="icon-button disabled far fa-arrow-rotate-left"></i>
-            <i class="icon-button disabled far fa-arrow-rotate-right"></i>
+            <i class="icon-button far fa-palette" tabindex="4"></i>
+            <i class="icon-button far fa-image" tabindex="4"></i>
+            <i class="icon-button far fa-tag" tabindex="4"></i>
+            <i class="icon-button disabled far fa-arrow-rotate-left" tabindex="4"></i>
+            <i class="icon-button disabled far fa-arrow-rotate-right" tabindex="4"></i>
         </div>
 
         <div class="button-bar">
-            <button class="secondary" onclick="switchAddFieldCollapse()">Close</button>
-            <button class="primary" onclick="addList()">Submit</button>
+            <button class="secondary" onclick="switchAddFieldCollapse()" tabindex="5">Close</button>
+            <button class="primary" onclick="addList()" tabindex="3">Submit</button>
         </div>
     </div>
 </div>
