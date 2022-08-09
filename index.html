@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Keep</title>
+
+    <script src="scripts/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/global-styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/pallete.css">
+    <link rel="stylesheet" type="text/css" href="styles/add-field.css">
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+            integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+    />
+</head>
+<body class="dark">
+
+<div class="add-field-wrapper">
+    <div class="collapsed">
+        <div id="expander" onclick="switchAddFieldCollapse()">Take a note...</div>
+        <i id="new-list" class="far fa-square-check"></i>
+        <i id="new-list-with-image" class="far fa-image"></i>
+    </div>
+    <div class="hidden"></div>
+</div>
+
+<div class="notes"></div>
+
+</body>
+</html>

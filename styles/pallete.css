@@ -1,0 +1,21 @@
+:root {
+    --background-color-13: hsl(0, 0%, 13%);
+    --background-color-40: hsl(0, 0%, 40%);
+    --background-color-77: hsl(0, 0%, 77%);
+    --background-color-90: hsl(0, 0%, 90%);
+    --background-color-100: hsl(0, 0%, 100%);
+}
+
+body.dark {
+    --background-color: var(--background-color-13);
+    --background-color-border: var(--background-color-40);
+
+    --text-color: var(--background-color-90);
+}
+
+body:not(.dark) {
+    --background-color: var(--background-color-100);
+    --background-color-border: var(--background-color-77);
+
+    --text-color: var(--background-color-13);
+}
