@@ -1,8 +1,3 @@
-html {
-    font-size: 62.5%;
-    font-family: Roboto, Arial, sans-serif;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -10,10 +5,14 @@ body {
     gap: 2rem;
 
     color: var(--text-color);
+
+    padding: 5rem 15rem;
 }
 
 .add-field-wrapper {
-    width: 75%;
+    width: 100%;
+    max-width: 60rem;
+    min-width: 45rem;
     height: fit-content;
 }
 
