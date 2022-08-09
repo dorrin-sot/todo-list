@@ -21,24 +21,24 @@
 <div class="add-field-wrapper">
     <div class="collapsed">
         <div id="expander" onclick="switchAddFieldCollapse()" tabindex="1">Take a note...</div>
-        <i id="new-list" class="icon-button far fa-square-check" tabindex="2"></i>
-        <i id="new-list-with-image" class=" icon-button far fa-image" tabindex="2"></i>
+        <i id="new-list" class="icon-button far fa-square-check" tabindex="2" title="New note"></i>
+        <i id="new-list-with-image" class=" icon-button far fa-image" tabindex="2" title="New note with image"></i>
     </div>
     <div class="hidden">
         <label for="title">Title</label>
-        <input id="title" placeholder="Title" tabindex="1">
+        <input id="title" placeholder="Title" tabindex="1" aria-label="Title">
 
         <div id="note">
             <label for="new-item-text">Note content</label>
-            <textarea id="new-item-text" type="text" placeholder="Take a note..." rows="5" tabindex="2"></textarea>
+            <textarea id="new-item-text" placeholder="Take a note..." rows="5" tabindex="2" aria-label="Note content"></textarea>
         </div>
 
         <div class="icon-bar">
-            <i class="icon-button far fa-palette" tabindex="4"></i>
-            <i class="icon-button far fa-image" tabindex="4"></i>
-            <i class="icon-button far fa-tag" tabindex="4"></i>
-            <i class="icon-button disabled far fa-arrow-rotate-left" tabindex="4"></i>
-            <i class="icon-button disabled far fa-arrow-rotate-right" tabindex="4"></i>
+            <i class="icon-button far fa-palette" tabindex="4" title="Background options"></i>
+            <i class="icon-button far fa-image" tabindex="4" title="Add Image"></i>
+            <i class="icon-button far fa-tag" tabindex="4" title="Add tag"></i>
+            <i class="icon-button disabled far fa-arrow-rotate-left" tabindex="4" title="Undo"></i>
+            <i class="icon-button disabled far fa-arrow-rotate-right" tabindex="4" title="Redo"></i>
         </div>
 
         <div class="button-bar">
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<div class="notes-grid"></div>
+<div class="notes-grid" aria-live="polite"></div>
 
 </body>
 </html>
