@@ -19,4 +19,5 @@ body:not(.dark) {
     --background-color-border: var(--background-color-77);
 
     --text-color: var(--background-color-13);
+    --text-color-disabled: var(--background-color-77);
 }

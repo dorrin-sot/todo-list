@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Google Keep</title>
 
-    <script src="scripts/script.js"></script>
+    <script src="scripts/script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="styles/global-styles.css">
     <link rel="stylesheet" type="text/css" href="styles/pallete.css">
     <link rel="stylesheet" type="text/css" href="styles/add-field.css">
@@ -40,7 +40,10 @@
             <i class="icon-button disabled far fa-arrow-rotate-right"></i>
         </div>
 
-        <button class="close-button" onclick="switchAddFieldCollapse()">Close</button>
+        <div class="button-bar">
+            <button class="secondary" onclick="switchAddFieldCollapse()">Close</button>
+            <button class="primary" onclick="addList()">Submit</button>
+        </div>
     </div>
 </div>
 

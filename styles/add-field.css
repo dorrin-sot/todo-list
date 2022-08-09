@@ -70,7 +70,7 @@ body {
     grid-template-areas:
             "title title"
             "list list"
-            "icons close";
+            "icons buttons";
     justify-items: center;
     align-items: center;
     gap: 1rem;
@@ -130,11 +130,14 @@ body {
     justify-self: flex-start;
 }
 
-.add-field-wrapper div:not(.collapsed) .close-button {
-    grid-area: close;
+.add-field-wrapper div:not(.collapsed) .button-bar {
+    grid-area: buttons;
 
+    display: flex;
     justify-self: flex-end;
-    margin-right: 1.5rem;
+    gap: 1.5rem;
+
+    margin-right: 1rem;
 }
 
 .add-field-wrapper div:not(.collapsed) label {
