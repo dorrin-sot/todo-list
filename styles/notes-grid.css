@@ -50,7 +50,7 @@
 
     display: inline-block;
 
-    border: 1px solid var(--background-color-border);
+    border: 2px solid var(--background-color-border);
     border-radius: var(--border-radius);
 
     padding: 1rem;
@@ -70,8 +70,8 @@
     border-radius: var(--border-radius);
 }
 
-.note-wrapper .overlay:hover,
-.note-wrapper .overlay:focus-within {
+.note-wrapper:hover .overlay,
+.note-wrapper:focus-within .overlay {
     opacity: 1;
 }
 

@@ -99,7 +99,7 @@ button:not(.icon-button):active {
 }
 
 button:not(.icon-button).primary {
-    border: 1px solid var(--background-color-border);
+    border: 2px solid var(--background-color-border);
 }
 
 :not(input, textarea, #expander):focus-visible {

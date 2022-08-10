@@ -16,11 +16,11 @@ body {
     height: fit-content;
 }
 
-.add-field-wrapper > div {
+.add-field-wrapper>div {
     width: 100%;
 
     border-radius: .8rem;
-    border: 1px solid var(--background-color-border);
+    border: 2px solid var(--background-color-border);
 
     font-size: 2rem;
 }
@@ -75,7 +75,7 @@ body {
     background-color: hsla(0, 0%, 63%, 0.16);
 }
 
-.add-field-wrapper > div:not(.collapsed) {
+.add-field-wrapper>div:not(.collapsed) {
     display: grid;
 
     grid-template-areas:

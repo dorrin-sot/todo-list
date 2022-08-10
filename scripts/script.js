@@ -1,19 +1,11 @@
 let notes = [
-  { id: 0, title: 'hello', 'content': 'no\n\nno' },
-  // {id: 1, title: 'hello', 'content': 'no'},
-  // {id: 2, title: 'hello', 'content': 'no'},
-  // {id: 3, title: 'hello', 'content': 'no'},
-  // {id: 4, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 5, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 6, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 7, title: 'hello', 'content': 'no'},
-  // {id: 8, title: 'hello', 'content': 'no'},
-  // {id: 9, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 10,title: 'hello', 'content': 'no'},
-  // {id: 11,title: 'hello', 'content': 'no'},
-  // {id: 12,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 13,title: 'hello', 'content': 'no'},
-  // {id: 14,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  { id: 0, title: 'study', content: 'complete angular studies' },
+  { id: 1, title: 'shopping', content: 'buy a cartoon of milk' },
+  { id: 2, title: 'coding', content: 'complete codestar project phase' },
+  // { id: 3, title: 'chores', content: 'vacuum my room.\nmake dinner' },
+  // { id: 4, title: 'excercise', content: '30 minutes' },
+  // { id: 5, title: 'visit your friend', content: '9pm' },
+  // { id: 6, title: 'hello', content: 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
 ]
 
 const addFieldWrapper = document.querySelector('.add-field-wrapper')
@@ -56,13 +48,13 @@ function updateNotesGrid() {
 
   for (const { id, title, content } of notes) {
     notesGrid.innerHTML +=
-      `<div class="note-wrapper">
-        <div class="note"">
+      `<div class="note-wrapper" id="note-${id}" tabindex="0">
+        <div class="note">
           <h2>${title}</h2>
           <pre>${content}</pre>
         </div>
-        <div id="note-${id}" class="overlay" tabindex="0">
-          <button class="icon-button" onclick="deleteNote(${id})" tabindex="6" title="Delete note">
+        <div class="overlay">
+          <button class="icon-button" onclick="deleteNote(${id})" title="Delete note">
             <i class="far fa-trash-can"></i>
           </button>
         </div>
