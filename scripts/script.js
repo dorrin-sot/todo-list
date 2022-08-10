@@ -1,5 +1,5 @@
 let notes = [
-  // {id: 0, title: 'hello', 'content': 'no\n\nno'},
+  {id: 0, title: 'hello', 'content': 'no\n\nno'},
   // {id: 1, title: 'hello', 'content': 'no'},
   // {id: 2, title: 'hello', 'content': 'no'},
   // {id: 3, title: 'hello', 'content': 'no'},
@@ -24,6 +24,10 @@ const notesGrid = document.querySelector('.notes-grid')
 function switchAddFieldCollapse() {
   collapsed.classList.toggle('hidden')
   notCollapsed.classList.toggle('hidden')
+  
+  if (!notCollapsed.classList.contains('hidden')) {
+    notCollapsed.querySelector('#title').focus()
+  }
 }
 
 function saveListAndClearListUI() {
@@ -48,15 +52,15 @@ function saveListAndClearListUI() {
 function updateNotesGrid() {
   notesGrid.innerHTML = ''
 
-  for (const note of notes) {
+  for (const {id, title, content} of notes) {
     notesGrid.innerHTML +=
       `<div class="note-wrapper">
-        <div class="note">
-          <h2>${note.title}</h2>
-          <pre>${note.content}</pre>
+        <div class="note"">
+          <h2>${title}</h2>
+          <pre>${content}</pre>
         </div>
-        <div class="overlay" tabindex="0">
-          <button class="icon-button" onclick="deleteNote(${note.id})" title="Delete note">
+        <div id="note-${id}" class="overlay" tabindex="0">
+          <button class="icon-button" onclick="deleteNote(${id})" tabindex="6" title="Delete note">
             <i class="far fa-trash-can"></i>
           </button>
         </div>
@@ -94,16 +98,21 @@ collapsed.addEventListener('keydown', ({key}) => {
   if (key === 'Enter') switchAddFieldCollapse()
 })
 
-document.addEventListener('keyup', ({key}) => {
+document.addEventListener('keyup', (event) => {
+  const {key, target: {id}} = event
+
   const collapsedIsShown = !collapsed.classList.contains('hidden')
 
   if (collapsedIsShown) {
     if (key.toLowerCase() === 'a') {
       switchAddFieldCollapse()
-      notCollapsed.querySelector('#title').focus()
     }
   } else {
     key === 'Escape' && switchAddFieldCollapse()
+  }
+
+  if (key.toLowerCase() === 'd' && id.startsWith('note-')) {
+    deleteNote(Number.parseInt(id.split('-')[1]))
   }
 })
 
