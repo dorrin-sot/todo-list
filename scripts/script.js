@@ -1,19 +1,19 @@
 let notes = [
   { id: 0, title: 'hello', 'content': 'no\n\nno' },
-  { id: 1, title: 'hello', 'content': 'no' },
-  { id: 2, title: 'hello', 'content': 'no' },
-  { id: 3, title: 'hello', 'content': 'no' },
-  { id: 4, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
-  { id: 5, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
-  { id: 6, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
-  { id: 7, title: 'hello', 'content': 'no' },
-  { id: 8, title: 'hello', 'content': 'no' },
-  { id: 9, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
-  { id: 10, title: 'hello', 'content': 'no' },
-  { id: 11, title: 'hello', 'content': 'no' },
-  { id: 12, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
-  { id: 13, title: 'hello', 'content': 'no' },
-  { id: 14, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
+  // {id: 1, title: 'hello', 'content': 'no'},
+  // {id: 2, title: 'hello', 'content': 'no'},
+  // {id: 3, title: 'hello', 'content': 'no'},
+  // {id: 4, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 5, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 6, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 7, title: 'hello', 'content': 'no'},
+  // {id: 8, title: 'hello', 'content': 'no'},
+  // {id: 9, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 10,title: 'hello', 'content': 'no'},
+  // {id: 11,title: 'hello', 'content': 'no'},
+  // {id: 12,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  // {id: 13,title: 'hello', 'content': 'no'},
+  // {id: 14,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
 ]
 
 const addFieldWrapper = document.querySelector('.add-field-wrapper')
@@ -61,7 +61,7 @@ function updateNotesGrid() {
           <h2>${title}</h2>
           <pre>${content}</pre>
         </div>
-        <div id="note-${id}" class="overlay" tabindex="6">
+        <div id="note-${id}" class="overlay" tabindex="0">
           <button class="icon-button" onclick="deleteNote(${id})" tabindex="6" title="Delete note">
             <i class="far fa-trash-can"></i>
           </button>

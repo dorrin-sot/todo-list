@@ -13,53 +13,62 @@
     <link rel="stylesheet" type="text/css" href="styles/key-listener.css" />
     <link rel="stylesheet" type="text/css" href="assets/icons/fontawesome-pro-6.1.1-web/css/all.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body class="dark">
-
     <div class="add-field-wrapper">
         <div class="collapsed">
-            <div id="expander" onclick="switchAddFieldCollapse()" tabindex="1">Take a note...</div>
-            <button class="icon-button" tabindex="2" title="New note"><i class="far fa-square-check"></i></button>
-            <button class="icon-button" tabindex="2" title="New note with image"><i class="far fa-image"></i></button>
+            <div id="expander" onclick="switchAddFieldCollapse()" tabindex="0">
+                Take a note...
+            </div>
+            <button class="icon-button" title="New note">
+                <i class="far fa-square-check"></i>
+            </button>
+            <button class="icon-button" title="New note with image">
+                <i class="far fa-image"></i>
+            </button>
         </div>
         <div class="hidden">
             <label for="title">Title</label>
-            <input id="title" placeholder="Title" tabindex="1" aria-label="Title">
+            <input id="title" placeholder="Title" aria-label="Title" />
 
             <div id="note">
                 <label for="new-item-text">Note content</label>
-                <textarea id="new-item-text" placeholder="Take a note..." rows="5" tabindex="2"
-                    aria-label="Note content"></textarea>
+                <textarea id="new-item-text" placeholder="Take a note..." rows="5" aria-label="Note content"></textarea>
             </div>
 
             <div class="icon-bar">
-                <button class="icon-button" tabindex="4" title="Background options"><i
-                        class="far fa-palette"></i></button>
-                <button class="icon-button" tabindex="4" title="Add Image"><i class="far fa-image"></i></button>
-                <button class="icon-button" tabindex="4" title="Add tag"><i class="far fa-tag"></i></button>
-                <button class="icon-button" tabindex="4" title="Undo" disabled>
+                <button class="icon-button" title="Background options">
+                    <i class="far fa-palette"></i>
+                </button>
+                <button class="icon-button" title="Add Image">
+                    <i class="far fa-image"></i>
+                </button>
+                <button class="icon-button" title="Add tag">
+                    <i class="far fa-tag"></i>
+                </button>
+                <button class="icon-button" title="Undo" disabled>
                     <i class="far fa-arrow-rotate-left"></i>
                 </button>
-                <button class="icon-button" tabindex="4" title="Redo" disabled>
+                <button class="icon-button" title="Redo" disabled>
                     <i class="far fa-arrow-rotate-right"></i>
                 </button>
             </div>
 
             <div class="button-bar">
-                <button class="secondary" onclick="switchAddFieldCollapse()" tabindex="5">Close</button>
-                <button class="primary" onclick="addList()" tabindex="3">Submit</button>
+                <button class="secondary" onclick="switchAddFieldCollapse()">
+                    Close
+                </button>
+                <button class="primary" onclick="addList()">Submit</button>
             </div>
         </div>
     </div>
-    </div>
 
     <div class="notes-grid" aria-live="polite"></div>
-    <div id="key-listener">A</div>
+    <div id="key-listener"></div>
 </body>
 
 </html>
