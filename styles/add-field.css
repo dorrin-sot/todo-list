@@ -48,16 +48,28 @@ body {
 }
 
 .icon-button {
+    display: flex;
+    justify-content: center;
+
+    background-color: transparent;
+    color: inherit;
+
+    font-size: inherit;
+
+    width: 4rem;
+    height: 4rem;
+
     padding: 1rem;
 
     border-radius: 50%;
 }
 
-.icon-button.disabled {
+.icon-button:disabled {
     color: var(--text-color-disabled);
+    cursor: not-allowed;
 }
 
-.icon-button:not(.disabled):hover {
+.icon-button:not(:disabled):hover {
     cursor: pointer;
 
     background-color: hsla(0, 0%, 63%, 0.16);
@@ -67,9 +79,9 @@ body {
     display: grid;
 
     grid-template-areas:
-            "title title"
-            "list list"
-            "icons buttons";
+        "title title"
+        "list list"
+        "icons buttons";
     justify-items: center;
     align-items: center;
     gap: 1rem;

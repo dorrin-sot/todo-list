@@ -70,6 +70,11 @@ svg {
 }
 
 button {
+    border: none;
+    cursor: pointer;
+}
+
+button:not(.icon-button) {
     color: inherit;
     background-color: transparent;
 
@@ -85,14 +90,23 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+button:not(.icon-button):hover {
     background-color: hsla(0, 0%, 63%, 0.15);
 }
 
-button:active {
+button:not(.icon-button):active {
     background-color: hsla(0, 0%, 63%, 0.05);
 }
 
-button.primary {
+button:not(.icon-button).primary {
     border: 1px solid var(--background-color-border);
+}
+
+:not(input, textarea, #expander):focus-visible {
+    outline: none;
+    box-shadow: 0 0 5px 5px var(--background-color-border);
+}
+
+#expander:focus-visible {
+    outline: none;
 }
