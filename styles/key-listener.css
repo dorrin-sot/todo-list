@@ -1,0 +1,20 @@
+#key-listener {
+    position: fixed;
+    inset-block-end: 15rem;
+    inset-inline-start: 10rem;
+
+    inline-size: 12rem;
+    block-size: 12rem;
+    background: var(--background-gradient);
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+
+    transition: opacity 0.1s ease;
+
+    font-size: 5rem;
+}
