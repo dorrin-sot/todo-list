@@ -1,5 +1,5 @@
 let notes = [
-  {id: 0, title: 'hello', 'content': 'no\n\nno'},
+  { id: 0, title: 'hello', 'content': 'no\n\nno' },
   // {id: 1, title: 'hello', 'content': 'no'},
   // {id: 2, title: 'hello', 'content': 'no'},
   // {id: 3, title: 'hello', 'content': 'no'},
@@ -24,7 +24,7 @@ const notesGrid = document.querySelector('.notes-grid')
 function switchAddFieldCollapse() {
   collapsed.classList.toggle('hidden')
   notCollapsed.classList.toggle('hidden')
-  
+
   if (!notCollapsed.classList.contains('hidden')) {
     notCollapsed.querySelector('#title').focus()
   }
@@ -39,7 +39,7 @@ function saveListAndClearListUI() {
     notes.push({
       title: title.value,
       content: noteContent.value,
-      id: (notes[notes.length - 1] || {id: -1}).id + 1
+      id: (notes[notes.length - 1] || { id: -1 }).id + 1
     })
   }
 
@@ -52,14 +52,14 @@ function saveListAndClearListUI() {
 function updateNotesGrid() {
   notesGrid.innerHTML = ''
 
-  for (const {id, title, content} of notes) {
+  for (const { id, title, content } of notes) {
     notesGrid.innerHTML +=
       `<div class="note-wrapper">
         <div class="note"">
           <h2>${title}</h2>
           <pre>${content}</pre>
         </div>
-        <div id="note-${id}" class="overlay" tabindex="6">
+        <div id="note-${id}" class="overlay" tabindex="0">
           <button class="icon-button" onclick="deleteNote(${id})" tabindex="6" title="Delete note">
             <i class="far fa-trash-can"></i>
           </button>
@@ -86,7 +86,7 @@ function addList() {
   console.log(notes)
 }
 
-document.addEventListener('click', ({target}) => {
+document.addEventListener('click', ({ target }) => {
   if (!addFieldWrapper.contains(target)) {
     if (collapsed.classList.contains('hidden')) {
       switchAddFieldCollapse()
@@ -94,12 +94,12 @@ document.addEventListener('click', ({target}) => {
   }
 })
 
-collapsed.addEventListener('keydown', ({key}) => {
+collapsed.addEventListener('keydown', ({ key }) => {
   if (key === 'Enter') switchAddFieldCollapse()
 })
 
 document.addEventListener('keyup', (event) => {
-  const {key, target: {id}} = event
+  const { key, target: { id } } = event
 
   const collapsedIsShown = !collapsed.classList.contains('hidden')
 
