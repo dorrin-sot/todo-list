@@ -21,8 +21,8 @@
 <div class="add-field-wrapper">
     <div class="collapsed">
         <div id="expander" onclick="switchAddFieldCollapse()" tabindex="1">Take a note...</div>
-        <i id="new-list" class="icon-button far fa-square-check" tabindex="2" title="New note"></i>
-        <i id="new-list-with-image" class=" icon-button far fa-image" tabindex="2" title="New note with image"></i>
+        <button class="icon-button" tabindex="2" title="New note"><i class="far fa-square-check"></i></button>
+        <button class="icon-button" tabindex="2" title="New note with image"><i class="far fa-image"></i></button>
     </div>
     <div class="hidden">
         <label for="title">Title</label>
@@ -30,15 +30,20 @@
 
         <div id="note">
             <label for="new-item-text">Note content</label>
-            <textarea id="new-item-text" placeholder="Take a note..." rows="5" tabindex="2" aria-label="Note content"></textarea>
+            <textarea id="new-item-text" placeholder="Take a note..." rows="5" tabindex="2"
+                      aria-label="Note content"></textarea>
         </div>
 
         <div class="icon-bar">
-            <i class="icon-button far fa-palette" tabindex="4" title="Background options"></i>
-            <i class="icon-button far fa-image" tabindex="4" title="Add Image"></i>
-            <i class="icon-button far fa-tag" tabindex="4" title="Add tag"></i>
-            <i class="icon-button disabled far fa-arrow-rotate-left" tabindex="4" title="Undo"></i>
-            <i class="icon-button disabled far fa-arrow-rotate-right" tabindex="4" title="Redo"></i>
+            <button class="icon-button" tabindex="4" title="Background options"><i class="far fa-palette"></i></button>
+            <button class="icon-button" tabindex="4" title="Add Image"><i class="far fa-image"></i></button>
+            <button class="icon-button" tabindex="4" title="Add tag"><i class="far fa-tag"></i></button>
+            <button class="icon-button" tabindex="4" title="Undo" disabled>
+                <i class="far fa-arrow-rotate-left"></i>
+            </button>
+            <button class="icon-button" tabindex="4" title="Redo" disabled>
+                <i class="far fa-arrow-rotate-right"></i>
+            </button>
         </div>
 
         <div class="button-bar">
