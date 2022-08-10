@@ -1,19 +1,19 @@
 let notes = [
   { id: 0, title: 'hello', 'content': 'no\n\nno' },
-  // {id: 1, title: 'hello', 'content': 'no'},
-  // {id: 2, title: 'hello', 'content': 'no'},
-  // {id: 3, title: 'hello', 'content': 'no'},
-  // {id: 4, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 5, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 6, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 7, title: 'hello', 'content': 'no'},
-  // {id: 8, title: 'hello', 'content': 'no'},
-  // {id: 9, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 10,title: 'hello', 'content': 'no'},
-  // {id: 11,title: 'hello', 'content': 'no'},
-  // {id: 12,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
-  // {id: 13,title: 'hello', 'content': 'no'},
-  // {id: 14,title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd'},
+  { id: 1, title: 'hello', 'content': 'no' },
+  { id: 2, title: 'hello', 'content': 'no' },
+  { id: 3, title: 'hello', 'content': 'no' },
+  { id: 4, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
+  { id: 5, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
+  { id: 6, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
+  { id: 7, title: 'hello', 'content': 'no' },
+  { id: 8, title: 'hello', 'content': 'no' },
+  { id: 9, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
+  { id: 10, title: 'hello', 'content': 'no' },
+  { id: 11, title: 'hello', 'content': 'no' },
+  { id: 12, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
+  { id: 13, title: 'hello', 'content': 'no' },
+  { id: 14, title: 'hello', 'content': 'csdcksdncksal\njdscs\njskdc\nkjcsda\ncsd' },
 ]
 
 const addFieldWrapper = document.querySelector('.add-field-wrapper')
@@ -21,6 +21,7 @@ const collapsed = document.querySelector('.add-field-wrapper > div.collapsed')
 const notCollapsed = document.querySelector('.add-field-wrapper > div:not(.collapsed)')
 const notesGrid = document.querySelector('.notes-grid')
 const keyListener = document.getElementById('key-listener');
+let keyListenerTimeout = null;
 
 function switchAddFieldCollapse() {
   collapsed.classList.toggle('hidden')
@@ -118,8 +119,15 @@ document.addEventListener('click', ({ target }) => {
 })
 
 document.addEventListener('keydown', ({ key }) => {
-  keyListener.innerHTML = key;
-  // if (key.length >=)
+  keyListenerTimeout && clearTimeout(keyListenerTimeout);
+  keyListener.innerHTML = key.toUpperCase();
+  keyListener.style.fontSize = key.length > 3 ? '2rem' : '5rem';
+
+  keyListener.style.opacity = '.8';
+  keyListenerTimeout = setTimeout(() => {
+    keyListener.style.opacity = '0';
+    keyListenerTimeout = null;
+  }, 600);
 });
 
 updateNotesGrid()

@@ -5,9 +5,9 @@
     --background-color-90: hsl(0, 0%, 90%);
     --background-color-100: hsl(0, 0%, 100%);
 
-    --color-blue-dark: #055ec8;
-    --color-blue-light: #46aff7;
-    --blue-gradient: linear-gradient(180deg, var(--color-blue-light) 0%, var(--color-blue-dark) 100%);
+    --color-gradient-light: hsl(203, 12%, 50%);
+    --color-gradient-dark: hsl(212, 14%, 20%);
+    --background-gradient: linear-gradient(180deg, var(--background-color-40) 0%, var(--background-color-13) 100%);
 }
 
 body.dark {
