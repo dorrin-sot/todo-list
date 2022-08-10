@@ -55,8 +55,10 @@ function updateNotesGrid() {
           <h2>${note.title}</h2>
           <pre>${note.content}</pre>
         </div>
-        <div class="overlay" tabindex="6">
-          <i class="icon-button far fa-trash-can" onclick="deleteNote(${note.id})" tabindex="6" title="Delete note"></i>
+        <div class="overlay" tabindex="0">
+          <button class="icon-button" onclick="deleteNote(${note.id})" title="Delete note">
+            <i class="far fa-trash-can"></i>
+          </button>
         </div>
       </div>`
   }

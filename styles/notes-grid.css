@@ -75,7 +75,7 @@
     opacity: 1;
 }
 
-.note-wrapper .overlay i {
+.note-wrapper .overlay button {
     position: absolute;
 
     font-size: 2rem;
